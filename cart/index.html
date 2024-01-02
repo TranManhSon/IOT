@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./js/jquery-3.6.4.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <script src="<https://unpkg.com/mqtt/dist/mqtt.min.js>"></script>
+    <script src = "../index.js"></script>
 </head>
 <body>
     <!-- Home -->
@@ -21,10 +23,10 @@
                 </div>
                 <div id="danh-muc" class=" col-lg-9 col-md-9 col-sm-12">
                     <div id="category">
-                        <a href="#">Trang chủ</a>
-                        <a href="#">Giỏ hàng</a>
-                        <a href="#">Thống kê</a>
-                        <a href="#">Đăng nhập</a>
+                        <a href="/home/index.html">Trang chủ</a>
+                        <a href="/cart/index.html">Giỏ hàng</a>
+                        <a href="/statistical/index.html">Thống kê</a>
+                        <a href="/login/index.html">Đăng nhập</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +98,28 @@
             </div>
         </div>
     </div>
+    <button id="get_infor">get infor</button>
     <!-- End Title -->
+    <script>
+        document.getElementById("get_infor").addEventListener('click', async function () {
+        const orderId = 1;
+        const url = 'http://3.1.202.106:8080/goods/filter?id=' + orderId;
+        let header = new Headers();
 
+        header.append('Access-Control-Allow-Origin', '*');
+        header.append('Access-Control-Allow-Credentials', 'true');
+        
+        try {
+            const response = await fetch(url, {
+                headers: header,
+                method: 'GET'
+            });
+            var data = await response.json()
+            console.log(data)
+        } catch (error) {
+            console.error(`Download error: ${error.message}`);
+        }
+    });
+    </script>
 </body>
 </html>
