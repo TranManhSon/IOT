@@ -7,6 +7,7 @@ body{
 
 #logo{
     margin-left: -20%;
+    padding-left: 185px;
 }
 
 #category{
@@ -30,6 +31,7 @@ body{
 
 #banner{
     margin-left: -197px;
+
 }
 
 .banner-1{
@@ -41,6 +43,43 @@ body{
     position: absolute;
     margin-left: 70%;
     margin-top: -290px;
+}
+.fa-times{
+    margin-top: 55px;
+    scale: 1.7;
+}
+
+.product-info {
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px; /
+    text-align: center; 
+}
+
+.product-info img {
+    max-width: 100%; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+}
+.product-info h4 {
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    font-size: 16px; 
+    overflow: hidden; 
+    word-wrap: break-word; 
+    text-align: center;
+}
+
+.product-info p {
+    text-align: center;
+}
+
+
+.product-container {
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin-top: 80px; 
 }
 
 /* #global-banner{
