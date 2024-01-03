@@ -31,18 +31,119 @@
         </div>
     </div>
     <!-- End Home -->
-    <!-- Banner -->
-    <div id="home">
+    <div id="home" >
         <div class="container">
             <div class="row">
-                <div id="banner" class="col-lg-12 col-md-12 col-sm-12">
-                    <img class="banner-1" src="./images/Rectangle 2.png" alt="">
-                    <img class="banner-2" src="./images/sieuthi 1.png" alt="">
+                <div id="title" class="col-lg-12 col-md-12 col-sm-12">
+                    <i class="fas fa-sort-amount-down"></i>
+                    <div id="title-product" class="col-lg-5 col-md-5 col-sm-12">
+                        <span>Tên sản phẩm</span>
+                    </div>
+                    <div id="title-extra" class="col-lg-7 col-md-7 col-sm-12">
+                        <span>Giá</span>
+                        <span>Số lượng</span>
+                        <span>Tổng cộng</span>
+                    </div>
                 </div>
-                
             </div>
+                <!-- <div class="item col-lg-12 col-md-12 col-sm-12" name="listcart">
+                    <div class="image-product col-lg-1 col-md-1 col-sm-12 img-fluid">
+                        <img src="../image/" alt="">
+                    </div>
+                    <div class="name-product col-lg-4 col-md-4 col-sm-12">
+                        <span>Tên sản phẩm</span><br>
+                        <p>Mô tả</p>
+                    </div>
+                    <div class="detail-product col-lg-7 col-md-7 col-sm-12">
+                        <span>259.000</span>
+                        <p>2</p>
+                        <span>259.000</span>
+                        
+                    </div>
+                    <i class="fas fa-times"></i>
+                </div> -->
+
+                <!-- <div class="item col-lg-12 col-md-12 col-sm-12" name="listcart"> 
+                     <div class="image-product col-lg-1 col-md-1 col-sm-12 img-fluid">
+                        <img src="./images/Rectangle 10.png" alt="">
+                    </div>
+                    <div class="name-product col-lg-4 col-md-4 col-sm-12">
+                        <span>Tên sản phẩm</span><br>
+                        <p>Mô tả</p>
+                    </div>
+                    <div class="detail-product col-lg-7 col-md-7 col-sm-12">
+                        <span>259.000</span>
+                        <p>2</p>
+                        <span>259.000</span>
+                    </div>
+                    <i class="fas fa-times"></i>
+                 </div> -->
+                <div id="product-list" class="row">
+                    <!-- Danh sách sản phẩm sẽ được thêm vào đây -->
+                </div>
         </div>
     </div>
+
+    <!-- Banner -->
+
     <!-- End Banner -->
+
+    <script>
+// document.addEventListener('DOMContentLoaded', function() {
+    // Đoạn mã trong đây sẽ được thực hiện khi cây DOM đã sẵn sàng
+    var goodList = [];
+
+    async function callListGoods() {
+    const url = 'http://3.1.202.106:8080/goods/most';
+        try {
+            const response = await fetch(url);
+            var data = await response.json()
+            renderProductList(data);
+        } catch (error) {
+            console.error(`Download error: ${error.message}`);
+        }
+    }
+
+    callListGoods();
+
+//});
+
+    function renderProductList(products) {
+        
+        var productListContainer = document.getElementById('product-list');
+
+        for (var i = 0; i < products.length; i++) {
+            console.log(products)
+            // Tạo phần tử cho mỗi sản phẩm
+            var productElement = document.createElement('div');
+            productElement.className = 'item col-lg-12 col-md-12 col-sm-12';
+
+            var productImage = document.createElement('div')
+            productImage.className = 'image-product col-lg-1 col-md-1 col-sm-12 img-fluid'
+            productImage.innerHTML = `<img src="../images/${products[i].id}.jpeg" alt="">`
+
+            var productNameElement = document.createElement('div');
+            productNameElement.className = 'name-product col-lg-4 col-md-4 col-sm-12';
+            productNameElement.innerHTML = products[i].goodsName;
+
+            var productExtraElement = document.createElement('div');
+            productExtraElement.className = 'detail-product col-lg-7 col-md-7 col-sm-12';
+            productExtraElement.innerHTML = `<span>${products[i].price}</span>
+                                            <span>${products[i].soldNumber}</span>
+                                            <span>${products[i].price * products[i].soldNumber}</span>`;
+
+
+            // Nối các phần tử con vào phần tử sản phẩm
+            productElement.appendChild(productImage);
+            productElement.appendChild(productNameElement);
+            productElement.appendChild(productExtraElement);
+            // productElement.innerHTML = `<i class="fas fa-times"></i>`
+
+            // Thêm sản phẩm vào danh sách
+            productListContainer.appendChild(productElement);
+    }
+}
+
+    </script>
 </body>
 </html>
