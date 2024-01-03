@@ -76,6 +76,7 @@ body{
 .name-product{
     margin-left: 40px;
     margin-top: 30px;
+    text-align: left;
 }
 
 .name-product span {

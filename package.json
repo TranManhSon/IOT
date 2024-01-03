@@ -2,6 +2,26 @@
   "dependencies": {
     "axios": "^1.6.3",
     "cross-fetch": "^4.0.0",
+    "mqtt": "^5.3.4",
     "node-fetch": "^3.3.2"
-  }
+  },
+  "name": "iot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TranManhSon/IOT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TranManhSon/IOT/issues"
+  },
+  "homepage": "https://github.com/TranManhSon/IOT#readme",
+  "description": "",
+  "type": "module"
 }

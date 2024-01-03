@@ -1,4 +1,99 @@
 
+// var mqtt;
+
+// hostname = "mqtt://test.mosquitto.org"
+// var clientId = "webio4mqttexample";
+// mqttClient = new Paho.MQTT.Client(hostname, clientId);
+// mqttClient = new Paho.MQTT.Client(hostname, clientId);
+// mqttClient.onMessageArrived = MessageArrived;
+// mqttClient.onConnectionLost = ConnectionLost;
+// Connect();
+
+// function Connected() {
+// 	console.log("Connected");
+// 	mqttClient.subscribe(subscription);
+// }
+
+
+
+// import mqtt from 'mqtt';
+// npm install mqtt --save
+
+// const client = mqtt.connect("mqtt://test.mosquitto.org");
+
+// client.on("connect", () => {
+//   client.subscribe("presence", (err) => {
+//     if (!err) {
+//       client.publish("presence", "Hello mqtt");
+//     }
+//   });
+// });
+
+// client.on("message", (topic, message) => {
+//   // message is Buffer
+//   console.log(message.toString());
+//   client.end();
+// });
+
+
+
+// let client;
+
+// function connectMQTT() {
+//     const brokerUrl = "mqtt://test.mosquitto.org"
+//     const clientId = 'mqtt_client'
+//     var top = "iot"
+
+//     client = mqtt.connect(brokerUrl, { clientId: clientId });
+
+//     client.on('connect', function () {
+//         console.log('Connected to MQTT broker');
+//         // Subscribe to a topic if needed: client.subscribe('your-topic');
+//     });
+
+//     client.on('message', function (topic, message) {
+//         console.log(`Received message on topic ${topic}: ${message.toString()}`);
+//         // Handle incoming message
+//     });
+
+//     client.on('error', function (error) {
+//         console.error('MQTT Error:', error);
+//     });
+// }
+
+// connectMQTT()
+
+// function publishMessage() {
+//     if (client && client.connected) {
+//         const topic = 'iot'; // Thay thế bằng topic bạn muốn gửi tin nhắn đến
+//         const message = 'Hello, MQTT!'; // Thay thế bằng nội dung tin nhắn của bạn
+//         client.publish(topic, message);
+//         console.log(`Published message to topic ${topic}: ${message}`);
+//     } else {
+//         console.error('Not connected to MQTT broker');
+//     }
+// }
+
+// publishMessage()
+
+// const client = mqtt.connect("mqtt://test.mosquitto.org");
+
+// client.on("connect", () => {
+//   client.subscribe("dotruong", (err) => {
+//     if (!err) {
+//       client.publish("dotruong", "test mqtt");
+//     }
+//   });
+// });
+
+// client.on("message", (topic, message) => {
+//   // message is Buffer
+//   console.log(message.toString());
+//   client.end();
+// });
+
+
+
 // const apiGetAllPl = 'http://localhost:3000/api/user/addplaylist'
 
 // function addElementPl(count) {

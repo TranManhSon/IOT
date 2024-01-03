@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./js/jquery-3.6.4.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.js"></script> -->
 </head>
 <body>
     <!-- Home -->
@@ -37,7 +38,7 @@
                 <div id="title" class="col-lg-12 col-md-12 col-sm-12">
                     <i class="fas fa-sort-amount-down"></i>
                     <div id="title-product" class="col-lg-5 col-md-5 col-sm-12">
-                        <span>Tên sản phẩm</span>
+                        <span>Thông tin sản phẩm</span>
                     </div>
                     <div id="title-extra" class="col-lg-7 col-md-7 col-sm-12">
                         <span>Giá</span>
@@ -113,7 +114,6 @@
         var productListContainer = document.getElementById('product-list');
 
         for (var i = 0; i < products.length; i++) {
-            console.log(products)
             // Tạo phần tử cho mỗi sản phẩm
             var productElement = document.createElement('div');
             productElement.className = 'item col-lg-12 col-md-12 col-sm-12';
